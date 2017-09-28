@@ -62,9 +62,9 @@ public class exe {
 		Felder = value("felder");
 		totCarrots = value("totCarrots");
 		
-		lblAmount.setText(value("carrots") + " Möhren");
-		lblMehrFelder.setText(preise.felder() + " Möhren");
-		lblInfos.setText("<html><body>Möhren pro Klick: " + cpc() + "<br>Möhren pro sec: " + cps() + "</body></html>");
+		lblAmount.setText(value("carrots") + " MÃ¶hren");
+		lblMehrFelder.setText(preise.felder() + " MÃ¶hren");
+		lblInfos.setText("<html><body>MÃ¶hren pro Klick: " + cpc() + "<br>MÃ¶hren pro sec: " + cps() + "</body></html>");
 		
 		JButton btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -98,7 +98,7 @@ public class exe {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				lblAmount.setText(carrotAmount + " Möhren");
+				lblAmount.setText(carrotAmount + " MÃ¶hren");
 			}
 		});
 		
@@ -133,14 +133,14 @@ public class exe {
 		btnCarrot.setContentAreaFilled(false);
 		window.getContentPane().add(btnCarrot);
 		
-		lblAmount = new JLabel(carrotAmount + "Möhren");
+		lblAmount = new JLabel(carrotAmount + "MÃ¶hren");
 		lblAmount.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
 		lblAmount.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAmount.setBackground(new Color(255, 255, 255));
 		lblAmount.setBounds(123, 83, 150, 46);
 		window.getContentPane().add(lblAmount);
 		
-		lblInfos = new JLabel("<html><body>Möhren pro Klick: 1<br>Möhren pro sec: 1</body></html>");
+		lblInfos = new JLabel("<html><body>MÃ¶hren pro Klick: 1<br>MÃ¶hren pro sec: 1</body></html>");
 		lblInfos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInfos.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
 		lblInfos.setBounds(105, 18, 184, 75);
@@ -174,9 +174,9 @@ public class exe {
 						Felder++;
 						
 						d.executeUpdate("UPDATE " + d.URL + " SET felder = " + Felder + " WHERE name = '" + User + "';");
-						lblAmount.setText(carrotAmount + " Möhren");
-						lblMehrFelder.setText(preise.felder() + " Möhren");
-						lblInfos.setText("<html><body>Möhren pro Klick: " + cpc() + "<br>Möhren pro sec: " + cps() + "</body></html>");
+						lblAmount.setText(carrotAmount + " MÃ¶hren");
+						lblMehrFelder.setText(preise.felder() + " MÃ¶hren");
+						lblInfos.setText("<html><body>MÃ¶hren pro Klick: " + cpc() + "<br>MÃ¶hren pro sec: " + cps() + "</body></html>");
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -262,7 +262,7 @@ public class exe {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				lblAmount.setText(carrotAmount + " Möhren");
+				lblAmount.setText(carrotAmount + " MÃ¶hren");
 				window.getContentPane().repaint();
 				
 			}
@@ -282,7 +282,10 @@ public class exe {
 		int c = 1*(value("felder")*value("felder"));
 		if(c == 0){
 			return 1;
-		}else{
+		}else if(c == 1){
+			return 2;
+		}
+		else{
 			return c;
 		}
 	}
