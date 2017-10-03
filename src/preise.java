@@ -6,13 +6,12 @@ public class preise {
 	public static Database d = new Database();
 	
 	public static int helfer() throws SQLException{
-		int p = 0;
-		p = exe.value("helfer");
+		int p = (int) Math.pow(2.5,start.value("helfer"))+start.value("helfer")*2;
 		return p;
 	}
 	
 	public static int felder() throws SQLException{
-		int p = exe.value("felder")*exe.value("felder")*100+(exe.value("felder")+1)*10;
+		int p = start.value("felder")*start.value("felder")*100+(start.value("felder")+1)*10*(int) Math.pow(2.5, Database.value("felder"));
 		return p;
 	}
 }

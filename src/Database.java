@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Database extends exe {
+public class Database extends start {
 	public String URL;
 	public Connection con;
 	public Statement s;
